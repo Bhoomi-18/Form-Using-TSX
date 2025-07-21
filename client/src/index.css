@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+:root {
+  --background: 255 255 255;
+  --foreground: 17 17 17;
+  --primary: 0 122 255;
+  --border: 229 229 229;
+  --radius: 0.5rem;
+}
+
