@@ -27,7 +27,7 @@ export default function AcademicDetails() {
       </div>
 
       <div>
-        <Label htmlFor="pre">Previous School</Label>
+        <Label htmlFor="pre">Previous Qualification</Label>
         <Input id="pre" {...register("pre")} />
         {errors.pre && <p className="text-red-500">{errors.pre.message?.toString()}</p>}
       </div>

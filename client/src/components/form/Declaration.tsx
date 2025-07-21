@@ -1,15 +1,11 @@
 import { useFormContext } from "react-hook-form";
-// import { Checkbox } from "../../components/ui/checkbox";
 import { Label } from "../../components/ui/label";
 
 export default function Declaration() {
   const {
     register,
     formState: { errors },
-    // watch,
   } = useFormContext();
-
-  // const agreed = watch("terms");
 
   return (
     <div className="space-y-4">

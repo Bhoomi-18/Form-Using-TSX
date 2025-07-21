@@ -46,7 +46,7 @@ export default function EditForm({ register, control, isUpdating }: EditFormProp
         <Input {...register("grade")} />
       </div>
       <div>
-        <label>Previous School</label>
+        <label>Previous Qualification</label>
         <Input {...register("pre")} />
       </div>
       <div>

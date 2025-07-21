@@ -21,7 +21,6 @@ export default function AdminProfile() {
   const [isUpdating, setIsUpdating] = useState(false);
   const { register, handleSubmit, control, reset } = useForm();
 
-  // 🔒 Route guard
   useEffect(() => {
     const token = sessionStorage.getItem("token");
     const userEmail = sessionStorage.getItem("email");
@@ -30,7 +29,6 @@ export default function AdminProfile() {
     }
   }, [navigate]);
 
-  // 📋 Load all users
   useEffect(() => {
     fetchAllUsers()
       .then((data) => setUsers(data))
@@ -40,12 +38,10 @@ export default function AdminProfile() {
       });
   }, [navigate]);
 
-  // ✏️ Populate form when editing
   useEffect(() => {
     if (editTarget) reset(editTarget);
   }, [editTarget, reset]);
 
-  // 🔄 Update user
   const onUpdate = async (data: any) => {
     setIsUpdating(true);
     try {
@@ -54,7 +50,7 @@ export default function AdminProfile() {
         prev.map((u) => (u._id === editTarget._id ? updated : u))
       );
       setEditTarget(null);
-      alert("✅ User updated successfully");
+      alert("User updated successfully");
     } catch (err) {
       console.error("Update failed:", err);
     } finally {
@@ -62,7 +58,6 @@ export default function AdminProfile() {
     }
   };
 
-  // 🗑️ Delete user
   const handleDelete = async (userId: string) => {
     const confirm = window.confirm("Are you sure you want to delete this user?");
     if (!confirm) return;
@@ -70,7 +65,7 @@ export default function AdminProfile() {
     try {
       await deleteUser(userId);
       setUsers((prev) => prev.filter((u) => u._id !== userId));
-      alert("🗑️ User deleted successfully");
+      alert("User deleted successfully");
     } catch (err) {
       console.error("Delete failed:", err);
     }
@@ -98,7 +93,6 @@ export default function AdminProfile() {
         </Accordion>
       ))}
 
-      {/* Modal for editing */}
       <Dialog open={!!editTarget} onOpenChange={() => setEditTarget(null)}>
         <DialogContent className="max-w-4xl">
           <DialogHeader>

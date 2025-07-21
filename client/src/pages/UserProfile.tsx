@@ -6,6 +6,7 @@ import { Button } from "../components/ui/button";
 import EditForm from "../components/sections/edit";
 import DocumentDialog from "../components/sections/dialogBox";
 import AlertBox from "../components/sections/alert";
+import ProfileDetails from "../components/sections/profileDetails";
 
 export default function UserProfile() {
   const [user, setUser] = useState<any>(null);
@@ -97,23 +98,7 @@ export default function UserProfile() {
           </form>
         ) : (
           <>
-            <div className="grid grid-cols-2 gap-6 text-base">
-              <p><strong>DOB:</strong> {new Date(user.dob).toLocaleDateString()}</p>
-              <p><strong>Gender:</strong> {user.gender}</p>
-              <p><strong>Nationality:</strong> {user.nation}</p>
-              <p><strong>Address:</strong> {user.address}</p>
-              <p><strong>Course:</strong> {user.course}</p>
-              <p><strong>Year:</strong> {user.year}</p>
-              <p><strong>Grade:</strong> {user.grade}</p>
-              <p><strong>Previous School:</strong> {user.pre}</p>
-
-              {user.phone?.map((p: any, i: number) => (
-                <p key={i}><strong>Phone:</strong> {p.number}</p>
-              ))}
-              {user.parentInfo?.map((p: any, i: number) => (
-                <p key={i}><strong>Parent:</strong> {p.name} ({p.contact})</p>
-              ))}
-            </div>
+            <ProfileDetails user={user} />
 
             <div className="flex flex-wrap gap-4 mt-6">
               <DocumentDialog title="ID Proof" src={user.proof} />

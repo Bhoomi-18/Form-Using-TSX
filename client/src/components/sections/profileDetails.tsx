@@ -26,7 +26,7 @@ export default function ProfileDetails({ user }: ProfileDetailsProps) {
       <p><strong>Course:</strong> {user.course}</p>
       <p><strong>Year:</strong> {user.year}</p>
       <p><strong>Grade:</strong> {user.grade}</p>
-      <p><strong>Previous School:</strong> {user.pre}</p>
+      <p><strong>Previous Qualification:</strong> {user.pre}</p>
 
       {user.phone?.map((p, i) => (
         <p key={i}><strong>Phone:</strong> {p.number}</p>
@@ -35,5 +35,6 @@ export default function ProfileDetails({ user }: ProfileDetailsProps) {
         <p key={i}><strong>Parent:</strong> {p.name} ({p.contact})</p>
       ))}
     </div>
+    
   );
 }

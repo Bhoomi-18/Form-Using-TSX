@@ -7,7 +7,7 @@ import ParentInfo from "../components/form/ParentInfo";
 import AcademicDetails from "../components/form/AcademicDetails";
 import Uploads from "../components/form/Uploads";
 import Declaration from "../components/form/Declaration";
-import StepNavigation from "../components/form/StepNavigation";
+import StepNavigation from "../components/sections/StepNavigation";
 import { useState } from "react";
 import LoginForm from "./Login";
 import { registerUser } from "../lib/api/registerUser";
