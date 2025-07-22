@@ -25,7 +25,7 @@ export default function UserProfile() {
       return;
     }
 
-    fetch(`http://localhost:3000/api/user/${userId}`, {
+    fetch(` https://user-registration-form-l6gx.onrender.com/api/user/${userId}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -44,7 +44,7 @@ export default function UserProfile() {
     setIsUpdating(true);
 
     try {
-      const res = await fetch(`http://localhost:3000/api/user/${userId}`, {
+      const res = await fetch(` https://user-registration-form-l6gx.onrender.com/api/user/${userId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

@@ -21,7 +21,7 @@ export async function registerUser(data: any) {
   formData.append("marks", data.marks?.[0]);
   formData.append("sign", data.sign?.[0]);
 
-  const res = await fetch("http://localhost:3000/api/user", {
+  const res = await fetch(" https://user-registration-form-l6gx.onrender.com/api/user", {
     method: "POST",
     body: formData,
   });
