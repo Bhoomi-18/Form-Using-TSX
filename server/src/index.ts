@@ -17,7 +17,10 @@ app.use("/uploads", express.static(path.join(__dirname, "../uploads")));
 
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://user-registration-form-sooty.vercel.app'
+  'http://localhost:3000',
+  'https://user-registration-form-sooty.vercel.app',
+  'https://user-registration-form-git-main-bhoomi-18s-projects.vercel.app',
+  'https://user-registration-form-bhoomi-18s-projects.vercel.app'
 ];
 app.use(cors({
   origin: function (origin, callback) {
